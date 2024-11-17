@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="demo">
+<h1>The XMLHttpRequest Object</h1>
+<button id="btn1">dados 1</button>
+<button>dados 2</button>
+</div>
+<div id="data">
+</div>
+
+<script>
+    document.getElementById('btn1').addEventListener('click', function(){
+
+        const xhr = new XMLHttpRequest();
+
+        xhr.open('GET', 'https://dummyjson.com/users', true);
+
+        xhr.onload = function(){
+            if(xhr.status == 200){
+                const response = JSON.parse(xhr.responseText);
+                const users = response.users;
+
+                const dataDiv = document.getElementById('data');
+                dataDiv.innerHTML = '';
+                
+                users.forEach(element => {
+                    const p = document.createElement('p');
+                    document.getElementById('')
+                    
+                    
+
+                    
+                });
+            }
+        }
+        xhr.send();
+
+    });
+   
+
+
+</script>
+</body>
+</html>
