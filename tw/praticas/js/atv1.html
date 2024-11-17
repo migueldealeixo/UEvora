@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+     <script>
+        var friends;
+        friends = ["João", "Maria", "Pedro","Mario"];
+        alert(friends[2]);
+
+        let name = "Miguel";
+        let length = name.length;
+
+        if(length > 4){
+            alert("Comprimento superior a 4");
+        }else{
+            alert("Comprimento inferior a 4");
+        }
+        if(friends.indexOf(name) !== -1){
+            alert("Há um amigo com o mesmo nome");
+        }else{
+           alert("Nenhum homonimo ");
+        }
+
+        let myVariable = parseInt(prompt("Escolha um numero: "));
+    
+
+        if(isNaN(myVariable)){
+            alert("NaN");
+        }else{
+        if(myVariable > 5){
+            alert("upper");
+        }else if(myVariable < 5){
+            alert("lower");
+        }
+    }
+    console.log(typeof myVariable);
+
+
+    </script>
+</head>
+<body>
+  
+</body>
+</html>

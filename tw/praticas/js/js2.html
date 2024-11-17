@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+
+
+
+
+
+</script>
+    <script>
+
+        let originalTitle = document.title;
+        var messages = 0;
+        function newMessage(argument){
+            messages++;
+            document.title = originalTitle+" ("+messages+" unread messages)!";
+            if(messages >0){ 
+                document.title = originalTitle +"("+messages+" new messages)";
+                document.getElementById('status').innerHTML = "You have " +  messages  +" unread messages";
+            }
+            if(messages >3)
+                document.getElementById('status').style.color = "red";
+                document.getElementById('status').style.fontWeight="bold";
+            
+        }
+
+        $(document).ready(function(){
+            $("#jq-btn").click(function(){
+               newMessage();
+               
+            });
+        });
+        
+
+        
+    </script>
+
+
+</head>
+<body>
+    <div id="container"> <p>Welcome to the Billion Dollar Web Page
+        <button onclick="newMessage()">Check</button></p>
+        <button id="jq-btn">jQuery Button!</button>
+    <p id="status"></p>
+</div>
+</body>
+</html>
