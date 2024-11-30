@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carpooling Évora</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <a href="main.html"><img src="logo.png" class="logo" alt="Logo"></a>
+            <ul>
+                <li><a href="main.html">Início</a></li>
+                <li><a href="condutor.html" class="active">Área do Condutor</a></li>
+                <li><a href="passageiro.html">Área do Passageiro</a></li>
+                <li><a href="#footer">Contatos</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1>Área do Condutor</h1>
+            <p id="jumpMain">Faça a escolha do que deseja fazer</p>
+            <div>
+                <button type="button" onclick="location.href='#Viagem'"><span></span>Registo de Viagem</button>
+                <button type="button" onclick="location.href='#RemoverViagem'"><span></span>Remover Viagem</button>
+            </div>
+        </div>
+    </div>
+    <!-- Registo de Viagem -->
+    <div class="container">
+        <div class="Viagem" id="Viagem">
+            <h2>Registar Viagem</h2>
+            <form action="#" method="POST">
+                <input type="text" name="nome" placeholder="Username" class="input-field" id="nomeCondutor">
+                <input type="text" name="de" placeholder="De" class="input-field" id="origemCondutor">
+                <input type="text" name="para" placeholder="Para" class="input-field" id="destinoCondutor">
+                <input type="date" name="data" class="input-field" id="dataCondutor">
+                <input type="time" name="time" id="timeCondutor" class="input-field">
+                <button type="button" class="search-button" id="submitOferta">Submeter</button>
+            </form>
+            <div id="responseCondutor" class="response-label"></div>
+            
+        </div>
+
+        <div class="RemoverViagem" id="RemoverViagem">
+            <label for="codigoViagem">ID da Viagem</label>
+            <input type="text" placeholder="ID" id="codigoViagem">
+            
+            <label for="nomeCondutorID">ID do Condutor</label>
+            <input type="text" placeholder="ID" id="nomeCondutorID">
+            
+            <button id="removeViagem" onclick="removerViagem()">Remover Viagem</button>
+            <div id="RemoveresponseViagem" class="response-label"></div>
+        </div>
+        
+        <div class="listarPedidos" id="listarPedidos">
+            <label for="listarViagens">Lista de Pedidos de Transporte</label>
+            <input class="input-field" type="text" id="nomeC" placeholder="Nome do Cliente">
+            <button class="lista" onclick="listarPedidos(0)">Procurar</button>
+        </div>
+
+        <div class="Avaliacão" id="Avaliacão">
+            <label for="Avaliacão">Perfil do Passageiro</label>
+            <input type="text" placeholder="Nome do Passageiro" id="IDPassageiro">
+            <button id="Avaliacão" onclick="searchPassageiro()">Procurar</button>
+        </div>
+    </div>
+    <div id="listaClientes" class="listaClientes"></div>
+    <div id="text" class="text2">
+        <button style="visibility:hidden;" id="antes-pedido" onclick="prevPage()" type="button">Anterior</button>
+        <button style="visibility: hidden;" id="proximo-pedido" onclick="nextPage()" type="button">Proxima</button>
+    </div>
+    <div id="listarInfo" class="listarInfo"></div>
+    </body>
+
+    <div class="pg-footer" id="footer">
+        <footer class="footer">
+            <svg class="footer-wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
+                <path class="footer-wave-path"
+                    d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z">
+                </path>
+            </svg>
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p class="contact"><span>Contatos:</span>
+                        <a href="mailto:l51653@alunos.uevora.pt">l51653@alunos.uevora.pt</a>
+                        <a href="mailto:l51820@alunos.uevora.pt">l51820@alunos.uevora.pt</a>
+                    </p>
+                </div>
+                <div class="credits">
+                    <p>Desenvolvido por: Miguel Aleixo e Mariana Cavaco</p>
+                </div>
+                <div class="link">
+                    <a href="https://www.uevora.pt/">Universidade de Évora</a>
+                </div>
+            </div>
+        </footer>
+    </div>

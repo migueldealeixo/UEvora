@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carpooling Évora</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<html>
+
+<head>
+    <title>Carpooling Évora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <a href="main.html"><img src="logo.png" class="logo" alt="Logo"></a>
+            <ul>
+                <li><a href="main.html">Início</a></li>
+                <li><a href="condutor.html">Área do Condutor</a></li>
+                <li><a href="passageiro.html" class="active">Área do Passageiro</a></li>
+                <li><a href="#footer">Contatos</a></li>
+            </ul>
+
+        </div>
+        <div class="content">
+            <h1>Carpooling Évora</h1>
+            <p>A tua escolha de viagens a preços baixos</p>
+            <div>
+                <button type="button" onclick="location.href='login.html'"><span></span>Login</button>
+                <button type="button" onclick="location.href='condutor.html'"><span></span>Area do Condutor</button>
+                <button type="button" onclick="location.href='passageiro.html'"><span></span>Area do Passageiro</button>
+            </div>
+        </div>
+    </div>
+    <!-- Barra de pesquisa das viagens Disponíveis-->
+    <div class="search-bar" id="search-bar">
+        <h2>Lista de Viagens</h2>
+        <input type="text" placeholder="De" class="input-field" id="pesquisaOrigem" >
+        <input type="text" placeholder="Para" class="input-field" id="pesquisaDestino">
+        <input type="date" class="input-field" id="dataViagem">
+        <button class="search-button" onclick="listarViagens(0)">Procurar</button> 
+        </div>
+        <div id="listarViagens" class="listaviagens">
+        </div>
+        <p></p>
+        <div id="text" class="text">
+            <button style="visibility:hidden;" id="antes-viagem" onclick="prevpage()" type="button" class="search-button">Anterior</button>
+            <button style="visibility:hidden;" id="proximo-viagem" onclick="nextpage()" type="button" class="search-button">Proxima</button>
+        </div>
+
+        <div class="search-bar" id="search-bar">
+            <h2>Procura de Viagens</h2>
+            <input type="text" placeholder="De" class="input-field" id="Origem">
+            <input type="text" placeholder="Para" class="input-field" id="Destino">
+            <input type="date" class="input-field" id="Data">
+            <button class="search-button" onclick="searchViagens()">Procurar</button> 
+            </div>
+            <div id="mostrar" class="listaviagens">
+            </div>
+            <div id="txt" class="txt">
+                <button style="visibility:hidden;" id="ant" onclick="prevpage()" type="button" class="search-button">Anterior</button>
+                <button style="visibility:hidden;" id="prox" onclick="nextpage()" type="button" class="search-button">Proxima</button>
+            </div>
+</body>
+
+</html>
+
+<div class="pg-footer" id="footer">
+    <footer class="footer">
+        <svg class="footer-wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100"
+            preserveAspectRatio="none">
+            <path class="footer-wave-path"
+                d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z">
+            </path>
+        </svg>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p class="contact"><span>Contatos:</span>
+                    <a href="mailto:l51653@alunos.uevora.pt">l51653@alunos.uevora.pt</a>
+                    <a href="mailto:l51820@alunos.uevora.pt">l51820@alunos.uevora.pt</a>
+                </p>
+            </div>
+            <div class="credits">
+                <p>Desenvolvido por: Miguel Aleixo e Mariana Cavaco</p>
+            </div>
+            <div class="link">
+                <a href="https://www.uevora.pt/">Universidade de Évora</a>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+<script src="script.js"></script>

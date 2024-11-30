@@ -1,0 +1,906 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(viagem.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.navbar{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    width: 100px;
+    cursor: pointer;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+.navbar ul li::after{
+    content: '';
+    height:3px;
+    width:0%;
+    background:#8bc0c9;
+    position:absolute;
+    left:0;
+    bottom:-10px;
+    transition:0.5s;
+}
+.navbar ul li:hover::after{
+    width:100%;
+}
+.content{
+    position:absolute;
+    width:100%;
+    top:50%;
+    transform: translateY(-50%);
+    text-align:center;
+    color:#fff;
+}
+.content h1{
+    font-size:70px;
+    margin-top:80px;
+}
+.content p{
+    margin:20px auto;
+    font-weight:100;
+    line-height:25px;
+}
+button{
+    width:200px;
+    padding: 15px 0;
+    text-align:center;
+    margin:20 px 10 px;
+    border-radius:25px;
+    font-weight:bold;
+    border: 2px solid #8bc0c9;
+    background: transparent;
+    color:#fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+span{
+    background: #8bc0c9;
+    height: 100%;
+    width: 0%;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+button:hover span{
+    width: 100%;
+}
+button:hover{
+    border: none;
+}
+
+/*lista de viagens*/
+
+.search-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 15px 25px;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 1000px;
+    margin: 50px auto; 
+}
+
+.search-bar h2 {
+    text-align: center; 
+    color: #8bc0c9; 
+}
+
+
+.search-bar .input-field {
+    border: 1px solid #ddd;
+    border-radius: 10px; 
+    padding: 10px 15px; 
+    font-size: 12px; 
+    flex: 1; 
+    margin: 0 5px;
+}
+
+.search-bar .input-field[type="date"] {
+    padding: 10px 15px;
+}
+
+.search-button {
+    background-color: #8bc0c9;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.search-button:hover {
+    background-color: #5e9fa8;
+}
+
+.search-button:hover {
+    background-color: #5e9fa8;
+}
+
+
+
+.banner {
+    position: relative; /* Torna a imagem um container para elementos absolutos */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*Disposição das Áreas*/
+
+.container {
+    display: flex; /* Define o layout flex */
+    justify-content: space-between; /* Espaçamento entre os elementos */
+    align-items: flex-start; /* Alinha os elementos ao topo */
+    gap: 20px; /* Espaçamento entre os elementos */
+    padding: 20px; /* Espaçamento interno */
+    margin: 0 auto; /* Centraliza na página */
+    max-width: 1200px; /* Largura máxima do contêiner */
+    flex-wrap: wrap; /* Permite que os elementos quebrem linha em telas menores */
+}
+
+.container > div {
+    flex: 1; /* Cada bloco ocupa o mesmo espaço */
+    max-width: 300px; /* Limita a largura de cada bloco */
+    background-color: #fff; /* Cor de fundo */
+    padding: 15px 25px; /* Espaçamento interno */
+    border-radius: 25px; /* Bordas arredondadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra */
+    text-align: center; /* Centraliza o conteúdo */
+}
+
+.container > div h2,
+.container > div label {
+    color: #46747a; /* Cor dos títulos e labels */
+    margin-bottom: 15px; /* Espaçamento abaixo dos textos */
+}
+
+/*Área do Condutor*/
+
+.Viagem {
+    display: flex;
+    flex-direction: column; /* Empilhar os itens do formulário verticalmente */
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px 25px;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.Viagem h2 {
+    margin-bottom: 20px;
+    color: #46747a;
+}
+
+.Viagem .input-field {
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 14px;
+    margin-bottom: 10px; /* Adiciona espaçamento entre os inputs */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.Viagem .input-field[type="date"] {
+    padding: 10px 15px;
+}
+
+.Viagem .search-button {
+    background-color: #8bc0c9;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px; /* Espaçamento superior ao botão */
+}
+
+.Viagem .search-button:hover {
+    background-color: #5e9fa8;
+}
+
+/*Remover Viagem*/
+
+.RemoverViagem {
+    display: flex;
+    flex-direction: column; /* Empilhar itens verticalmente */
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px 25px;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: fit-content;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.RemoverViagem label {
+    margin-bottom: 10px;
+    color: #46747a;
+    font-size: 16px; /* Tamanho da fonte para o texto do label */
+}
+
+.RemoverViagem input {
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 14px;
+    margin-bottom: 15px; /* Espaçamento inferior */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.RemoverViagem button {
+    background-color: #8bc0c9;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px; /* Espaçamento superior ao botão */
+}
+
+.RemoverViagem button:hover {
+    background-color: #5e9fa8;
+}
+
+/*Avaliação*/
+
+.AvaliacãoCondutor {
+    display: flex;
+    flex-direction: column; /* Empilha os itens verticalmente */
+    align-items: center; /* Centraliza o conteúdo */
+    background-color: #ffffff; /* Fundo branco */
+    padding: 15px 25px; /* Espaçamento interno */
+    border-radius: 25px; /* Bordas arredondadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra */
+    width: 90%; /* Largura ajustável */
+    max-width: fit-content; /* Limita a largura ao conteúdo */
+    margin-top: 20px; /* Espaçamento superior */
+    margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+.AvaliacãoCondutor label {
+    margin-bottom: 20px; /* Espaçamento abaixo do label */
+    color: #46747a; /* Cor do texto */
+    font-size: 16px; /* Tamanho do texto */
+    text-align: center; /* Centralização */
+}
+
+.AvaliacãoCondutor input {
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 14px;
+    margin-bottom: 15px; /* Espaçamento inferior */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.AvaliacãoCondutor button {
+    background-color: #8bc0c9; /* Cor do botão */
+    color: #fff; /* Cor do texto */
+    border: none; /* Remove bordas */
+    border-radius: 20px; /* Bordas arredondadas */
+    padding: 10px 20px; /* Espaçamento interno */
+    cursor: pointer; /* Indica clicável */
+    font-size: 16px; /* Tamanho do texto */
+}
+
+.AvaliacãoCondutor button:hover {
+    background-color: #5e9fa8; /* Cor ao passar o mouse */
+}
+
+/*Área do Passageiro*/
+/*Pedido de viagem*/
+
+.pedido {
+    display: flex;
+    flex-direction: column; /* Empilhar os itens do formulário verticalmente */
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px 25px;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.pedido h2 {
+    margin-bottom: 20px;
+    color: #46747a;
+}
+
+.pedido .input-field {
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 14px;
+    margin-bottom: 10px; /* Adiciona espaçamento entre os inputs */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.pedido .input-field[type="date"] {
+    padding: 10px 15px;
+}
+
+.pedido .search-button {
+    background-color: #8bc0c9;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px; /* Espaçamento superior ao botão */
+}
+
+.pedido .search-button:hover {
+    background-color: #5e9fa8;
+}
+
+/*Remover Pedido*/
+.RemoverPedido {
+    display: flex;
+    flex-direction: column; /* Empilhar itens verticalmente */
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px 25px;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: fit-content;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.RemoverPedido h2 {
+    margin-bottom: 20px;
+    color: #46747a;
+}
+
+.RemoverPedido label {
+    margin-bottom: 10px;
+    color: #46747a;
+    font-size: 16px; /* Tamanho da fonte para o texto do label */
+}
+
+.RemoverPedido input {
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 14px;
+    margin-bottom: 15px; /* Espaçamento inferior */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.RemoverPedido button {
+    background-color: #8bc0c9;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px; /* Espaçamento superior ao botão */
+}
+
+.RemoverPedido button:hover {
+    background-color: #5e9fa8;
+}
+
+/*lista viagens*/
+
+.listarPedidos {
+    display: flex;
+    flex-direction: column; /* Empilha os itens verticalmente */
+    align-items: center; /* Centraliza o conteúdo */
+    background-color: #ffffff; /* Fundo branco */
+    padding: 15px 25px; /* Espaçamento interno */
+    border-radius: 25px; /* Bordas arredondadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra */
+    width: 90%; /* Largura ajustável */
+    max-width: fit-content; /* Limita a largura ao conteúdo */
+    margin-top: 20px; /* Espaçamento superior */
+    margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+.listarPedidos label {
+    margin-bottom: 20px; /* Espaçamento abaixo do label */
+    color: #46747a; /* Cor do texto */
+    font-size: 16px; /* Tamanho do texto */
+    text-align: center; /* Centralização */
+}
+
+.listarPedidos input {
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 14px;
+    margin-bottom: 15px; /* Espaçamento inferior */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.listarPedidos button {
+    background-color: #8bc0c9; /* Cor do botão */
+    color: #fff; /* Cor do texto */
+    border: none; /* Remove bordas */
+    border-radius: 20px; /* Bordas arredondadas */
+    padding: 10px 20px; /* Espaçamento interno */
+    cursor: pointer; /* Indica clicável */
+    font-size: 16px; /* Tamanho do texto */
+}
+
+.listarPedidos button:hover {
+    background-color: #5e9fa8; /* Cor ao passar o mouse */
+}
+
+
+/*Avaliação*/
+
+.Avaliacão {
+    display: flex;
+    flex-direction: column; /* Empilha os itens verticalmente */
+    align-items: center; /* Centraliza o conteúdo */
+    background-color: #ffffff; /* Fundo branco */
+    padding: 15px 25px; /* Espaçamento interno */
+    border-radius: 25px; /* Bordas arredondadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra */
+    width: 90%; /* Largura ajustável */
+    max-width: fit-content; /* Limita a largura ao conteúdo */
+    margin-top: 20px; /* Espaçamento superior */
+    margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+.Avaliacão label {
+    margin-bottom: 20px; /* Espaçamento abaixo do label */
+    color: #46747a; /* Cor do texto */
+    font-size: 16px; /* Tamanho do texto */
+    text-align: center; /* Centralização */
+}
+
+.Avaliacão input {
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 14px;
+    margin-bottom: 15px; /* Espaçamento inferior */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.Avaliacão button {
+    background-color: #8bc0c9; /* Cor do botão */
+    color: #fff; /* Cor do texto */
+    border: none; /* Remove bordas */
+    border-radius: 20px; /* Bordas arredondadas */
+    padding: 10px 20px; /* Espaçamento interno */
+    cursor: pointer; /* Indica clicável */
+    font-size: 16px; /* Tamanho do texto */
+}
+
+.Avaliacão button:hover {
+    background-color: #5e9fa8; /* Cor ao passar o mouse */
+}
+
+
+
+/*login*/
+
+.login-form {
+    margin-top: 20px;
+}
+
+.login-form input {
+    width: 300px;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+}
+
+.login-form input::placeholder {
+    color: #ddd;
+}
+
+.login-form input:focus {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.login-form button {
+    width: 340px;
+    margin: 20px auto;
+}
+
+.login-form button:hover span {
+    width: 100%;
+}
+
+.login-form button:hover {
+    border: none;
+}
+
+/*Outputs*/
+
+#listarViagens {
+    display: flex;
+    flex-direction: column; /* Organiza os itens em uma coluna */
+    gap: 15px; /* Espaço entre os cartões */
+    margin: 30px auto; /* Centraliza o container e ajusta margens */
+    width: 90%; /* Largura relativa à tela */
+    max-width: 1000px; /* Limita largura máxima */
+}
+#mostrar{
+    display: flex;
+    flex-direction: column; /* Organiza os itens em uma coluna */
+    gap: 15px; /* Espaço entre os cartões */
+    margin: 30px auto; /* Centraliza o container e ajusta margens */
+    width: 90%; /* Largura relativa à tela */
+    max-width: 1000px; /* Limita largura máxima */
+}
+
+.text{
+    display: flex; /* Ativa o flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 100%; /* Garante que o contêiner ocupe o espaço necessário */
+    gap: 10px;
+}
+
+.txt{
+    display: flex; /* Ativa o flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 100%; /* Garante que o contêiner ocupe o espaço necessário */
+    gap: 10px;
+}
+
+.response-label {
+    display: flex; /* Para alinhar o texto centralmente */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    background-color: #ffffff; /* Fundo branco, consistente com outros elementos */
+    color: #46747a; /* Cor do texto */
+    font-size: 16px; /* Tamanho do texto */
+    padding: 15px 25px; /* Espaçamento interno */
+    border-radius: 20px; /* Bordas arredondadas, consistentes */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra leve */
+    text-align: center; /* Centraliza o texto */
+    margin-top: 20px; /* Espaçamento acima */
+    width: 90%; /* Largura relativa */
+    max-width: 800px; /* Limita a largura */
+}
+
+#listarInfo {
+    display: flex;
+    flex-direction: column; /* Organiza os itens em uma coluna */
+    gap: 15px; /* Espaço entre os cartões */
+    margin: 30px auto; /* Centraliza o container e ajusta margens */
+    width: 90%; /* Largura relativa à tela */
+    max-width: 1000px; /* Limita largura máxima */
+    align-items: center;
+}
+
+#listaClientes{
+    display: flex;
+    flex-direction: column; /* Organiza os itens em uma coluna */
+    gap: 15px; /* Espaço entre os cartões */
+    margin: 30px auto; /* Centraliza o container e ajusta margens */
+    width: 90%; /* Largura relativa à tela */
+    max-width: 1000px; /* Limita largura máxima */
+}
+
+#listarInfoCondutor{
+    display: flex;
+    flex-direction: column; /* Organiza os itens em uma coluna */
+    gap: 15px; /* Espaço entre os cartões */
+    margin: 30px auto; /* Centraliza o container e ajusta margens */
+    width: 90%; /* Largura relativa à tela */
+    max-width: 1000px; /* Limita largura máxima */
+    align-items: center;
+}
+
+.text2 button {
+    background-color: #8bc0c9; /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    border: none; /* Remove bordas */
+    border-radius: 20px; /* Bordas arredondadas */
+    padding: 12px 25px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Indica que é clicável */
+    margin: 10px; /* Espaçamento entre os botões */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transição suave para hover */
+    visibility: hidden; /* Oculta os botões inicialmente */
+}
+
+.text2 button:hover {
+    background-color: #5e9fa8; /* Cor ao passar o mouse */
+}
+
+.text2 button:active {
+    background-color: #46747a; /* Cor ao clicar */
+    transform: scale(0.98); /* Reduz levemente ao clicar */
+}
+
+.text2 button[style*="visibility: visible;"] {
+    visibility: visible !important; /* Garante visibilidade quando alterado por JavaScript */
+}
+
+
+/*footer*/
+
+.pg-footer {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.footer {
+    background-color: #5e9fa8; /* Fundo do footer */
+    color: #fff; /* Texto branco */
+    position: relative; /* Necessário para o SVG */
+}
+
+.footer-wave-svg {
+    display: block;
+    height: 30px;
+    position: relative;
+    top: -1px; /* Ajuste fino para alinhar a onda */
+    width: 100%;
+    background-color: #5e9fa8; /* Para manter consistência */
+}
+
+.footer-wave-path {
+    fill: #46747a; /* Cor azul do fundo do footer */
+}
+
+
+
+.footer-content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1230px;
+    padding: 40px 15px; /* Margens internas */
+    text-align: center; /* Centraliza o conteúdo */
+}
+
+.footer-content .contact {
+    margin-bottom: 15px;
+}
+
+.footer-content .contact a {
+    color: #ffffff; /* Cor desejada para os links */
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+.footer-content .contact a:hover {
+    color: #46747a; /* Cor ao passar o rato */
+    text-decoration: underline; /* Adiciona sublinhado no hover */
+}
+
+.footer-content .credits {
+    margin-bottom: 10px;
+}
+
+.footer-content .link a {
+    color: #fffff2;
+    text-decoration: underline;
+}
+
+.footer-content a:hover {
+    color: #46747a; /* Cor do hover dos links */
+}
+
+
+
+/*Area do Condutor*/
+
+.condutorContainer{
+    display: flex;
+    gap: 20px;
+}
+.form1{
+    border: 1px;
+    padding: 20px;
+    width: 300px;
+    
+}
+
+#dualshowcase {
+    display: flex; 
+    gap: 1rem; 
+}
+
+
+.listagem {
+    flex: 1; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    padding: 1rem; 
+    background-color: #f9f9f9; 
+    overflow-y: auto; 
+    max-height: 400px; 
+}
+
+
+.listagem ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+.listagem li {
+    padding: 0.5rem 0; 
+    border-bottom: 1px solid #ddd; 
+}
+
+.listagem li:last-child {
+    border-bottom: none;
+}
+
+
+/* Responsividade */
+@media screen and (max-width: 1200px) {
+    .navbar {
+        width: 90%;
+    }
+    .content h1 {
+        font-size: 60px;
+    }
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .container > div {
+        max-width: 100%;
+    }
+    .search-bar {
+        flex-direction: column;
+    }
+    .search-bar .input-field {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .navbar {
+        width: 90%;
+    }
+    .container > div {
+        max-width: 100%;
+    }
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .content h1 {
+        font-size: 50px;
+    }
+    .content p {
+        font-size: 14px;
+    }
+    .search-bar {
+        width: 100%;
+        padding: 10px 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar ul li {
+        margin: 0 10px;
+    }
+    .content h1 {
+        font-size: 40px;
+    }
+    .content p {
+        font-size: 13px;
+    }
+    .search-bar {
+        padding: 10px 15px;
+    }
+    .search-bar .input-field {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+    .search-bar .search-button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .container > div {
+        max-width: 100%;
+    }
+    .Viagem, .RemoverViagem, .AvaliacãoCondutor {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .content h1 {
+        font-size: 35px;
+    }
+    .navbar ul li {
+        margin: 0 5px;
+    }
+    .search-bar .input-field {
+        font-size: 11px;
+        padding: 7px 10px;
+    }
+    .search-bar .search-button {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .container > div {
+        max-width: 100%;
+    }
+    .content p {
+        font-size: 12px;
+    }
+    .container-login {
+        width: 100%;
+        padding: 15px;
+    }
+    .container-login input {
+        font-size: 12px;
+        padding: 8px;
+    }
+    .container-login button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
