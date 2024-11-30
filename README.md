@@ -1,7 +1,1 @@
-# Licenciatura em Engenharia Informática
-
-## Todos os trabalhos desenvolvidos por Miguel Aleixo
-
-Trabalhos das Cadeiras:
--1ºAno:  
-  -
+Licenciatura em Engenharia Informatica na Universidade de Évora
